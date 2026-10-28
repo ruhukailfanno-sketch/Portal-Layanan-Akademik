@@ -1,0 +1,192 @@
+/* Portal Layanan Akademik – mobile-first */
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --text: #1b2430;
+  --muted: #4a5568;
+  --primary: #0b4f8a;
+  --primary-dark: #083a66;
+  --accent: #fff3c4;
+  --border: #cbd5e1;
+  --focus: #b45309;
+  --radius: 10px;
+  --space: 1rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: var(--space);
+}
+
+h1, h2, h3 { line-height: 1.25; margin: 0 0 .5rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.15rem; }
+p { margin: 0 0 var(--space); }
+
+a { color: var(--primary); }
+
+/* Focus yang selalu terlihat */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: .5rem;
+  top: -4rem;
+  background: var(--primary-dark);
+  color: #fff;
+  padding: .5rem 1rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  z-index: 100;
+}
+.skip-link:focus { top: 0; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Header */
+.site-header { background: var(--primary); color: #fff; padding: 1rem 0; }
+.header-inner { display: flex; align-items: center; gap: .875rem; }
+.site-name { margin: 0; font-size: .9rem; opacity: .95; }
+.site-title { font-size: 1.35rem; margin: 0; }
+
+/* Nav */
+.site-nav { background: var(--primary-dark); position: sticky; top: 0; z-index: 10; }
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav-list a {
+  display: block;
+  padding: .75rem .875rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.nav-list a:hover { background: rgba(255,255,255,.15); text-decoration: underline; }
+.site-nav :focus-visible { outline-color: #ffd166; outline-offset: -3px; }
+
+/* Sections */
+.section { padding: 2rem 0; }
+.intro { background: var(--surface); border-bottom: 1px solid var(--border); }
+.intro-grid { display: grid; gap: 1.5rem; align-items: center; }
+.intro-figure { margin: 0; }
+.intro-figure img { border-radius: var(--radius); width: 100%; }
+.intro-figure figcaption { font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: .7rem 1.25rem;
+  background: var(--primary);
+  color: #fff;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  min-height: 44px;
+}
+.btn:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
+.btn-outline { background: transparent; color: var(--primary); }
+.btn-outline:hover { color: #fff; }
+
+/* Cards */
+.cards { display: grid; gap: var(--space); grid-template-columns: 1fr; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.card p:last-of-type { margin-bottom: 0; }
+.card .meta { font-size: .9rem; color: var(--muted); margin-top: auto; padding-top: .25rem; }
+.card .btn { margin-top: var(--space); text-align: center; }
+
+/* Form */
+.form-wrap { max-width: 40rem; }
+form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+.field { margin: 0 0 1.1rem; padding: 0; border: 0; min-width: 0; }
+label, legend { display: block; font-weight: 600; margin-bottom: .3rem; padding: 0; }
+input[type="text"], input[type="email"], select, textarea {
+  width: 100%;
+  font: inherit;
+  padding: .6rem .7rem;
+  border: 2px solid #64748b;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+}
+textarea { resize: vertical; min-height: 7rem; }
+.hint { font-size: .875rem; color: var(--muted); margin: .3rem 0 0; }
+.radio-row { display: flex; align-items: center; gap: .6rem; margin-bottom: .4rem; }
+.radio-row input { width: 1.25rem; height: 1.25rem; accent-color: var(--primary); flex: none; }
+.radio-row label { margin: 0; font-weight: 400; }
+fieldset.field { border: 0; }
+input:user-invalid, select:user-invalid, textarea:user-invalid { border-color: #b91c1c; }
+
+/* Footer */
+.site-footer { background: #17212b; color: #e5e9ef; padding: 2rem 0 1rem; margin-top: 1rem; }
+.site-footer a { color: #ffd166; }
+.footer-grid { display: grid; gap: 1.25rem; }
+.footer-title { font-size: 1.05rem; }
+address { font-style: normal; }
+.copy { font-size: .85rem; margin: 1.5rem auto 0; color: #c3cad4; }
+
+/* Tablet: konten mulai lega untuk 2 kolom */
+@media (min-width: 40rem) {
+  .container { padding-inline: 1.5rem; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .site-title { font-size: 1.6rem; }
+}
+
+/* Desktop */
+@media (min-width: 64rem) {
+  h2 { font-size: 1.75rem; }
+  .section { padding: 3rem 0; }
+  .intro-grid { grid-template-columns: 1.1fr 1fr; }
+  .cards { grid-template-columns: repeat(4, 1fr); }
+  form { padding: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

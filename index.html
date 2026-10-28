@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portal Layanan Akademik: ajukan surat aktif kuliah, transkrip sementara, cuti akademik, dan legalisir secara daring.">
+  <title>Portal Layanan Akademik – Universitas Nusantara</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#konten-utama">Lewati ke konten utama</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <img src="img/logo.svg" width="48" height="48" alt="Logo Universitas Nusantara">
+      <div>
+        <p class="site-name">Universitas Nusantara</p>
+        <h1 class="site-title">Portal Layanan Akademik</h1>
+      </div>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Navigasi utama">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#permohonan">Ajukan Permohonan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="konten-utama">
+    <section id="beranda" class="section intro" aria-labelledby="judul-intro">
+      <div class="container intro-grid">
+        <div>
+          <h2 id="judul-intro">Urus keperluan akademik tanpa antre</h2>
+          <p>Portal ini membantu mahasiswa mengajukan surat dan dokumen akademik secara daring. Pilih layanan, isi formulir, dan pantau prosesnya. Waktu proses rata-rata 1–3 hari kerja.</p>
+          <p><a class="btn" href="#permohonan">Ajukan sekarang</a></p>
+        </div>
+        <figure class="intro-figure">
+          <img src="img/ilustrasi.svg" width="480" height="320" alt="Ilustrasi mahasiswa mengajukan dokumen akademik melalui laptop">
+          <figcaption>Pengajuan dokumen kini dapat dilakukan dari mana saja.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="layanan" class="section" aria-labelledby="judul-layanan">
+      <div class="container">
+        <h2 id="judul-layanan">Layanan Tersedia</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Surat Aktif Kuliah</h3>
+            <p>Bukti status mahasiswa aktif untuk beasiswa, tunjangan, atau administrasi lain.</p>
+            <p class="meta">Proses: 1 hari kerja</p>
+            <a class="btn btn-outline" href="#permohonan">Ajukan Surat Aktif Kuliah</a>
+          </article>
+          <article class="card">
+            <h3>Transkrip Sementara</h3>
+            <p>Rekap nilai sementara yang dicetak resmi dan ditandatangani program studi.</p>
+            <p class="meta">Proses: 2 hari kerja</p>
+            <a class="btn btn-outline" href="#permohonan">Ajukan Transkrip Sementara</a>
+          </article>
+          <article class="card">
+            <h3>Cuti Akademik</h3>
+            <p>Pengajuan cuti satu semester dengan persetujuan dosen wali dan program studi.</p>
+            <p class="meta">Proses: 3 hari kerja</p>
+            <a class="btn btn-outline" href="#permohonan">Ajukan Cuti Akademik</a>
+          </article>
+          <article class="card">
+            <h3>Legalisir Dokumen</h3>
+            <p>Pengesahan salinan ijazah dan transkrip untuk keperluan melamar kerja atau studi lanjut.</p>
+            <p class="meta">Proses: 2 hari kerja</p>
+            <a class="btn btn-outline" href="#permohonan">Ajukan Legalisir</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="permohonan" class="section" aria-labelledby="judul-form">
+      <div class="container form-wrap">
+        <h2 id="judul-form">Form Permohonan Layanan</h2>
+        <p>Kolom bertanda <span aria-hidden="true">*</span><span class="sr-only">bintang</span> wajib diisi.</p>
+
+        <form action="#" method="post">
+          <div class="field">
+            <label for="nama">Nama lengkap <span aria-hidden="true">*</span></label>
+            <input type="text" id="nama" name="nama" required autocomplete="name" minlength="3">
+          </div>
+
+          <div class="field">
+            <label for="nim">NIM</label>
+            <input type="text" id="nim" name="nim" inputmode="numeric" pattern="[0-9]{8,12}" aria-describedby="nim-hint" autocomplete="off">
+            <p id="nim-hint" class="hint">Opsional. 8–12 digit angka.</p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email kampus / pribadi <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-hint">
+            <p id="email-hint" class="hint">Contoh: nama@email.com. Notifikasi dikirim ke alamat ini.</p>
+          </div>
+
+          <div class="field">
+            <label for="layanan-pilih">Jenis layanan <span aria-hidden="true">*</span></label>
+            <select id="layanan-pilih" name="layanan" required>
+              <option value="">-- Pilih layanan --</option>
+              <option value="aktif">Surat Aktif Kuliah</option>
+              <option value="transkrip">Transkrip Sementara</option>
+              <option value="cuti">Cuti Akademik</option>
+              <option value="legalisir">Legalisir Dokumen</option>
+            </select>
+          </div>
+
+          <fieldset class="field">
+            <legend>Cara pengambilan dokumen <span aria-hidden="true">*</span></legend>
+            <div class="radio-row">
+              <input type="radio" id="ambil-kampus" name="pengambilan" value="kampus" required>
+              <label for="ambil-kampus">Ambil di kampus</label>
+            </div>
+            <div class="radio-row">
+              <input type="radio" id="ambil-digital" name="pengambilan" value="digital">
+              <label for="ambil-digital">Kirim versi digital (PDF)</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="keperluan">Keperluan <span aria-hidden="true">*</span></label>
+            <textarea id="keperluan" name="keperluan" rows="5" required minlength="10" maxlength="500" aria-describedby="keperluan-hint"></textarea>
+            <p id="keperluan-hint" class="hint">Jelaskan singkat, 10–500 karakter.</p>
+          </div>
+
+          <button type="submit" class="btn">Kirim Permohonan</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="kontak" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h2 class="footer-title">Bagian Akademik</h2>
+        <address>
+          Gedung Rektorat Lt. 2<br>
+          Jl. Pendidikan No. 1, Ambon, Maluku
+        </address>
+      </div>
+      <div>
+        <h2 class="footer-title">Kontak</h2>
+        <p>Email: <a href="mailto:akademik@example.ac.id">akademik@example.ac.id</a><br>
+        Jam layanan: Senin–Jumat, 08.00–15.00 WIT</p>
+      </div>
+    </div>
+    <p class="copy container">&copy; 2026 Universitas Nusantara. Tugas Pertemuan 5 – Responsive &amp; Accessible Web Client.</p>
+  </footer>
+</body>
+</html>
